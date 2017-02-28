@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.android.appiumtest"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    testCompile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    testCompile 'junit:junit:4.12'
+    testCompile files('libs/cglib-nodep-3.2.4.jar')
+    testCompile files('libs/commons-codec-1.10.jar')
+    testCompile files('libs/commons-exec-1.3.jar')
+    testCompile files('libs/commons-io-2.5.jar')
+    testCompile files('libs/commons-lang3-3.4.jar')
+    testCompile files('libs/commons-logging-1.2.jar')
+    testCompile files('libs/cssparser-0.9.20.jar')
+    testCompile files('libs/gson-2.3.1.jar')
+    testCompile files('libs/guava-19.0.jar')
+    testCompile files('libs/hamcrest-core-1.3.jar')
+    testCompile files('libs/hamcrest-library-1.3.jar')
+    testCompile files('libs/htmlunit-2.23.jar')
+    testCompile files('libs/htmlunit-core-js-2.23.jar')
+    testCompile files('libs/httpclient-4.5.2.jar')
+    testCompile files('libs/httpcore-4.4.4.jar')
+    testCompile files('libs/httpmime-4.5.2.jar')
+    testCompile files('libs/java-client-5.0.0-BETA1.jar')
+    testCompile files('libs/javax.servlet-api-3.1.0.jar')
+    testCompile files('libs/jetty-io-9.2.13.v20150730.jar')
+    testCompile files('libs/jetty-util-9.2.13.v20150730.jar')
+    testCompile files('libs/jna-4.1.0.jar')
+    testCompile files('libs/jna-platform-4.1.0.jar')
+    testCompile files('libs/junit-4.12.jar')
+    testCompile files('libs/neko-htmlunit-2.23.jar')
+    testCompile files('libs/netty-3.5.7.Final.jar')
+    testCompile files('libs/phantomjsdriver-1.3.0.jar')
+    testCompile files('libs/sac-1.3.jar')
+    testCompile files('libs/serializer-2.7.2.jar')
+    testCompile files('libs/websocket-api-9.2.15.v20160210.jar')
+    testCompile files('libs/websocket-client-9.2.15.v20160210.jar')
+    testCompile files('libs/websocket-common-9.2.15.v20160210.jar')
+}
